@@ -12,20 +12,19 @@ with the suggested divide and conquer strategy along with several
 [optimizations](http://neil.fraser.name/news/2007/10/09/) Neil added.
 
 ```js
-var diff = require('fast-diff');
-
 var good = 'Good dog';
 var bad = 'Bad dog';
 
-var result = diff(good, bad);
+// Regular diff:
+var result = window.FastDiff.diff(good, bad);
 // [[-1, "Goo"], [1, "Ba"], [0, "d dog"]]
 
-// Respect suggested edit location (cursor position), added in v1.1
-diff('aaa', 'aaaa', 1)
-// [[0, "a"], [1, "a"], [0, "aa"]]
+// Diff with suggested cursor position:
+window.FastDiff.diff('aaa', 'aaaa', 1)
+// Result = [[0, "a"], [1, "a"], [0, "aa"]]
 
 // For convenience
-diff.INSERT === 1;
-diff.EQUAL === 0;
-diff.DELETE === -1;
+window.FastDiff.INSERT === 1;
+window.FastDiff.EQUAL === 0;
+window.FastDiff.DELETE === -1;
 ```
