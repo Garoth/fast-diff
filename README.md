@@ -1,8 +1,15 @@
-# Fast Diff [![Build Status](https://travis-ci.org/jhchen/fast-diff.svg)](https://travis-ci.org/jhchen/fast-diff)
+# Fast Diff for Generic JavaScript
 
-This is a simplified import of the excellent [diff-match-patch](https://code.google.com/p/google-diff-match-patch/) library by [Neil Fraser](https://neil.fraser.name/) into the Node.js environment. The match and patch parts are removed, as well as all the extra diff options. What remains is incredibly fast diffing between two strings.
+This is a version of [jhchen's](https://github.com/jhchen) fast-diff that doesn't require Node.
+Instead, the functions are provided in a global named window.FastDiff. The code is originally
+based on [diff-match-patch](https://code.google.com/p/google-diff-match-patch/) library by
+[Neil Fraser](https://neil.fraser.name/).
 
- The diff function is an implementation of ["An O(ND) Difference Algorithm and its Variations" (Myers, 1986)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.6927&rep=rep1&type=pdf) with the suggested divide and conquer strategy along with several [optimizations](http://neil.fraser.name/news/2007/10/09/) Neil added.
+The diff function is an implementation of
+["An O(ND) Difference Algorithm and its Variations" (Myers, 1986)]
+(http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.4.6927&rep=rep1&type=pdf)
+with the suggested divide and conquer strategy along with several
+[optimizations](http://neil.fraser.name/news/2007/10/09/) Neil added.
 
 ```js
 var diff = require('fast-diff');
